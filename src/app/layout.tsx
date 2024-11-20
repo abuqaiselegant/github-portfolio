@@ -1,10 +1,20 @@
 import "./globals.css";
-
 import { cn } from "@/lib/utils";
 import { geistSans, geistMono } from "./fonts/fonts";
-import { constructMetadata } from "@/lib/metadata";
+import type { Metadata } from "next";
 
-export const metadata = constructMetadata();
+// Replace the constructMetadata with direct metadata export
+export const metadata: Metadata = {
+  title: "Abu Qais | Data Science Professional",
+  description:
+    "Data Science Professional with expertise in machine learning, automation, and software development",
+  keywords: [
+    "Data Science",
+    "Machine Learning",
+    "Software Development",
+    "Portfolio",
+  ],
+};
 
 export default function RootLayout({
   children,
