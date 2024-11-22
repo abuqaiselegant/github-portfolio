@@ -2,8 +2,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { geistSans, geistMono } from "./fonts/fonts";
 import type { Metadata } from "next";
+import { Providers } from './providers'; // Add this import
 
-// Replace the constructMetadata with direct metadata export
 export const metadata: Metadata = {
   title: "Abu Qais | Data Science Professional",
   description:
@@ -22,11 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={cn("antialiased", geistSans.variable, geistMono.variable)}
+        className={cn(
+          "antialiased min-h-screen bg-background",
+          geistSans.variable,
+          geistMono.variable
+        )}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
